@@ -16,7 +16,7 @@ const initdb = async () =>
 export const putDb = async (content) => {
   console.log('UPDATE the database');
 
-  // Creates connection to the database
+// Creates connection to the database
   const contactDb = await openDB('jate', 1);
 // Creates a new transaction and privileges
   const tx = contactDb.transaction('jate', 'readonly');
@@ -38,9 +38,9 @@ export const getDb = async () => {
 
   console.log('GET from the database');
 
-  // Creates connection to the database
+// Creates connection to the database
   const contactDb = await openDB('jate', 1);
-  
+
 // Creates a new transaction and privileges
   const tx = contactDb.transaction('jate', 'readonly');
 
@@ -48,7 +48,7 @@ export const getDb = async () => {
   const store = tx.objectStore('jate');
 
 // Gets all data in the database
-  const request = store.get(1);
+  const request = store.getAll();
 
 // Confirms the request
   const result = await request;
